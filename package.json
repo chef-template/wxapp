@@ -1,4 +1,7 @@
 {
     "name": "wxapp-template",
-    "version": "0.0.1"
+    "version": "0.0.2",
+    "scripts": {
+        "install": "git init && git submodule add https://github.com/2046/we.git"
+    }
 }
