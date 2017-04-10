@@ -1,3 +1,1 @@
-<view>
-    hello world!
-</view>
+<view>{{ text }}</view>

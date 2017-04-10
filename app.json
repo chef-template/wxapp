@@ -5,7 +5,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "微信应用",
+        "navigationBarTitleText": "微信小程序",
         "navigationBarBackgroundColor": "#fff"
     }
 }
