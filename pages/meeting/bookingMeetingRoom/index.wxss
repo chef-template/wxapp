@@ -38,12 +38,23 @@
 }
 
 .meeting-list .item{
-    width: 230rpx;
-    height: 230rpx;
+    width: 200rpx;
+    height: 200rpx;
+    position: relative;
     background: #22c064;
-    margin: 10rpx;
-    text-align:center;
-    line-height: 230rpx;
+    padding: 20rpx;
+}
+
+.meeting-list .item .text{
+    line-height: 60rpx;
+    text-align:left;
     color: #fff;
     font-size: 24rpx;
+    display: block;
+}
+
+.success-icon{
+    position: absolute;
+    bottom: 10rpx;
+    right: 10rpx;
 }

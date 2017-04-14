@@ -16,49 +16,18 @@ new class extends we.Page {
               name: '九层会议室',
               status: true,
               list: [{
-                name: '九层大会议室',
+                name: '大会议室',
                 size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
-                status: false
+                status: true
               },
               {
-                name: '九层小会议室',
+                name: '小会议室',
                 size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
-                status: false
+                status: true
               },
               {
-                name: '九层开放会议室',
+                name: '开放会议室',
                 size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
-                status: false
-              }]
-            },
-            {
-              name: '十一层会议室',
-              status: false,
-              list: [{
-                name: '十一层大会议室',
-                size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
-                status: false
-              },
-              {
-                name: '十一层小会议室',
-                size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
-                status: false
-              },
-              {
-                name: '十一层开放会议室',
-                size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
                 status: false
               }]
             },
@@ -66,25 +35,38 @@ new class extends we.Page {
               name: '十层会议室',
               status: false,
               list: [{
-                name: '十层大会议室',
+                name: '大会议室',
                 size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
+                status: true
+              },
+              {
+                name: '小会议室',
+                size: '8-10',
                 status: false
               },
               {
-                name: '十层小会议室',
+                name: '开放会议室',
                 size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
+                status: true
+              }]
+            },
+            {
+              name: '十一层会议室',
+              status: false,
+              list: [{
+                name: '大会议室',
+                size: '8-10',
                 status: false
               },
               {
-                name: '十层开放会议室',
+                name: '小会议室',
                 size: '8-10',
-                currentAppointment: '',
-                time: '2017年04月12日 上午 10时-12时',
-                status: false
+                status: true
+              },
+              {
+                name: '开放会议室',
+                size: '8-10',
+                status: true
               }]
             }
           ]
@@ -120,10 +102,13 @@ new class extends we.Page {
       })
     }
     // 进入会议室详情
-    gotoMeetingInfo() {
+    gotoMeetingInfo(e) {
       console.log(urls)
+      let name = e.currentTarget.dataset.name,
+          url = urls.meetingInfo + '?name=' + name
       this.$redirectTo({
-          url: urls.meetingInfo
+          url: url
+
       })
     }
     onReady() {

@@ -5,5 +5,9 @@
 </view>
 
 <view class="meeting-list">
-    <view class="item" bindtap="gotoMeetingInfo" wx:for="{{meetingList}}" wx:key="{{index}}">{{item.name}}</view>
+    <view class="item" bindtap="gotoMeetingInfo" wx:for="{{meetingList}}" wx:key="{{index}}" data-name="9810">
+        <text class="text">名称：{{item.name}}</text>
+        <text class="text">人数：{{item.size}}</text>
+        <icon wx:if="{{!item.status}}" class="success-icon" type="success_no_circle" color="#fff" size="20"/>
+    </view>
 </view>

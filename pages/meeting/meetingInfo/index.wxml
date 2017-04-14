@@ -1,2 +1,12 @@
 <!--pages/meeting/meetingInfo/index.wxml-->
-<text>pages/meeting/meetingInfo/index.wxml</text>
+<view class="meeting-box">
+    <view class="meeting-image">
+        <image wx:mode="scaleToFill" class="meeting-img" src="../../image/01.jpg"></image>
+    </view>
+    <view class="meeting-info">
+        <text>会议室名称: 大会议室</text>
+        <text>容纳人数: 8-10</text>
+        <text>当前预约人: 黄老师</text>
+        <text>预约时间: 2017-04-10 上午10点-12点</text>
+    </view>
+</view>

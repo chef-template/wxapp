@@ -1,1 +1,14 @@
 /* pages/meeting/meetingInfo/index.wxss */
+.meeting-box{
+    display: flex;
+}
+.meeting-img{
+    width: 200rpx;
+    height: 200rpx;
+}
+.meeting-info text{
+    display: block;
+    line-height: 60rpx;
+    padding-left: 20rpx;
+    font-size: 24rpx;
+}
