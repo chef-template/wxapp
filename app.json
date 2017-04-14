@@ -1,0 +1,19 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/login/index",
+        "pages/library/books/index",
+        "pages/library/addBooks/index",
+        "pages/library/bookInfo/index",
+        "pages/library/borrowBooks/index",
+        "pages/meeting/addMeeting/index",
+        "pages/meeting/bookingMeetingRoom/index", 
+        "pages/meeting/meetingInfo/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "厚本OA系统",
+        "navigationBarBackgroundColor": "#22c064"
+    }
+}

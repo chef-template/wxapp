@@ -1,0 +1,5 @@
+
+<view class="button-box">
+    <button class="button-green" bindtap="gotoLibrary" hover-class="button-green-hover">图书馆</button>
+    <button class="button-green" bindtap="gotoMeetingRoom" hover-class="button-green-hover">会议室预约</button>
+</view>

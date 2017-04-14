@@ -1,0 +1,19 @@
+/** 修改button默认的点击态样式类**/
+.button-box{
+    margin:200rpx 0;
+}
+.button-green {
+  width: 70%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background-color: #22c064;
+  color:#fff;
+  margin:40rpx auto;
+  opacity: .8;
+}
+/** 添加自定义button点击态样式类**/
+.button-green-hover {
+  opacity: 1;
+}

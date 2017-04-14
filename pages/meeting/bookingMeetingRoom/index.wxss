@@ -1,0 +1,49 @@
+/* pages/meeting/bookingMeetingRoom/index.wxss */
+.banner{
+    width:750rpx;
+    height:400rpx;
+    margin:10rpx 0;
+
+}
+.tabs-box{
+    display: flex;
+    height: 40px;
+    border-top: 1px solid #22c064;
+    border-bottom: 1px solid #22c064;
+}
+
+.tabs-box .tabs{
+    flex: 1;
+    font-size: 30rpx;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #22c064;
+    border-right: 1px solid #22c064;
+}
+.tabs-box .tabs:last-child{
+    border-right: 1px solid transparent;
+}
+
+.tabs-box .tabs.active{
+    background: #22c064;
+    color: #fff;
+}
+
+.meeting-list{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin-top: 10rpx;
+}
+
+.meeting-list .item{
+    width: 230rpx;
+    height: 230rpx;
+    background: #22c064;
+    margin: 10rpx;
+    text-align:center;
+    line-height: 230rpx;
+    color: #fff;
+    font-size: 24rpx;
+}
