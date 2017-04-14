@@ -123,7 +123,6 @@ new class extends we.Page {
     gotoMeetingInfo() {
       console.log(urls)
       this.$redirectTo({
-        
           url: urls.meetingInfo
       })
     }
