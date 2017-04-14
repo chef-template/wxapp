@@ -1,0 +1,8 @@
+<template name="grid">
+    <view class="weui-grid">
+        <view class="weui-grid__icon">
+            <image src="{{ icon }}"></image>
+        </view>
+        <text class="weui-grid__label">{{ title }}</text>
+    </view>
+</template>

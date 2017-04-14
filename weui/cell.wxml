@@ -1,0 +1,16 @@
+<template name="cell">
+    <navigator wx:if="{{ url }}" class="weui-cell weui-cell_access" url="{{ url }}">
+        <view class="weui-cell__hd" wx:if="{{ icon }}">
+            <image src="{{ icon }}"></image>
+        </view>
+        <view class="weui-cell__bd">{{ title }} </view>
+        <view class="weui-cell__ft">{{ desc }}</view>
+    </navigator>
+    <view wx:if="{{ !url }}" class="weui-cell">
+        <view class="weui-cell__hd" wx:if="{{ icon }}">
+            <image src="{{ icon }}"></image>
+        </view>
+        <view class="weui-cell__bd">{{ title }}</view>
+        <view class="weui-cell__ft">{{ desc }}</view>
+    </view>
+</template>

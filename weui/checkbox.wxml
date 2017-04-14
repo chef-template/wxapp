@@ -1,0 +1,11 @@
+<template name="checkbox">
+    <label>
+        <view class="weui-checkbox">
+            <checkbox value="{{ value }}" />
+            <view class="weui-checkbox__hd {{ selected ? '' : 'weui-checkbox__hd--border' }}">
+                <icon type="success" size="20" wx:if="{{ selected }}"/>
+            </view>
+            <view class="weui-checkbox__bd">{{ title }}</view>
+        </view>
+    </label>
+</template>

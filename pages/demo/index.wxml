@@ -1,0 +1,188 @@
+<import src="../../weui/grid.wxml" />
+<import src="../../weui/cell.wxml" />
+<import src="../../weui/radio.wxml" />
+<import src="../../weui/checkbox.wxml" />
+
+<swiper class="weui-swiper">
+    <swiper-item>
+        <image class="weui-swiper__image" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />
+    </swiper-item>
+    <swiper-item>
+        <image class="weui-swiper__image" src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" />
+    </swiper-item>
+</swiper>
+
+<view class="sep"></view>
+
+<view class="weui-grids">
+    <block wx:for="{{grid}}" wx:key="{{title}}">
+        <template is="grid" data="{{...item}}" />
+    </block>
+</view>
+
+<view class="sep"></view>
+
+<button type="primary">页面主操作 Normal</button>
+
+<view class="weui-cells">
+    <template is="cell" data="{{ icon: 'assets/icon.png', title: '标题文字', desc: '说明文字' }}"></template>
+</view>
+
+<view class="sep"></view>
+
+<view class="weui-cells">
+    <template is="cell" data="{{ url: 'page/index', icon: 'assets/icon.png', title: '标题文字', desc: '说明文字' }}"></template>
+    <template is="cell" data="{{ url: 'page/index', icon: 'assets/icon.png', title: '标题文字', desc: '说明文字' }}"></template>
+</view>
+
+<view class="sep"></view>
+
+<input class="input" placeholder="这是一个可以自动聚焦的input" cursor-spacing="20" />
+
+<view class="sep"></view>
+
+<textarea class="textarea" placeholder="这是一个可以自动聚焦的textarea" cursor-spacing="20" />
+
+<view class="sep"></view>
+
+<view class="weui-switchs">
+    <view class="weui-switch">
+        <view class="weui-switch__bd">标题文字</view>
+        <view class="weui-switch__ft">
+            <switch />
+        </view>
+    </view>
+    <view class="weui-switch">
+        <view class="weui-switch__hd">
+            <image src="assets/icon.png"></image>
+        </view>
+        <view class="weui-switch__bd">标题文字</view>
+        <view class="weui-switch__ft">
+            <switch checked />
+        </view>
+    </view>
+</view>
+
+<view class="sep"></view>
+
+<radio-group class="weui-radios" bindchange="radioChange">
+    <block wx:for="{{radios}}" wx:key="{{title}}">
+        <template is="radio" data="{{...item}}" />
+    </block>
+</radio-group>
+
+<view class="sep"></view>
+
+<checkbox-group class="weui-checkboxs" bindchange="checkboxChange">
+    <block wx:for="{{checkboxs}}" wx:key="{{title}}">
+        <template is="checkbox" data="{{...item}}" />
+    </block>
+</checkbox-group>
+
+<view class="sep"></view>
+
+<view class="weui-form">
+    <form>
+        <view class="weui-forminput">
+            <view class="weui-forminput__hd">number</view>
+            <view class="weui-forminput__bd">
+                <input type="number" placeholder="这是一个可以自动聚焦的input" cursor-spacing="20" />
+            </view>
+        </view>
+        <view class="weui-forminput">
+            <view class="weui-forminput__hd">text</view>
+            <view class="weui-forminput__bd">
+                <input type="text" placeholder="这是一个可以自动聚焦的input" cursor-spacing="20" />
+            </view>
+        </view>
+        <view class="weui-forminput">
+            <view class="weui-forminput__hd">password</view>
+            <view class="weui-forminput__bd">
+                <input type="text" password="true" placeholder="这是一个可以自动聚焦的input" cursor-spacing="20" />
+            </view>
+        </view>
+        <view class="weui-forminput">
+            <view class="weui-forminput__hd">idcard</view>
+            <view class="weui-forminput__bd">
+                <input type="idcard" placeholder="这是一个可以自动聚焦的input" cursor-spacing="20" />
+            </view>
+        </view>
+        <view class="weui-forminput">
+            <view class="weui-forminput__hd">digit</view>
+            <view class="weui-forminput__bd">
+                <input type="digit" placeholder="这是一个可以自动聚焦的input" cursor-spacing="20" />
+            </view>
+        </view>
+        <view class="weui-forminput weui-forminput__code">
+            <view class="weui-forminput__hd">验证码</view>
+            <view class="weui-forminput__bd">
+                <input type="text" placeholder="这是一个可以自动聚焦的input" cursor-spacing="20" />
+            </view>
+            <view class="weui-forminput__ft">
+                <image src="assets/vcode.jpg"></image>
+            </view>
+        </view>
+    </form>
+</view>
+
+<view class="sep"></view>
+
+<view class="weui-preview">
+    <view class="weui-preview__hd">标题</view>
+    <view class="weui-preview__bd">
+        <view class="weui-preview__item">
+            <text class="weui-preview__label">商品</text>
+            <text class="weui-preview__value">阿斯顿环境</text>
+        </view>
+        <view class="weui-preview__item">
+            <text class="weui-preview__label">标题标题</text>
+            <text class="weui-preview__value">标题标题标题标题</text>
+        </view>
+        <view class="weui-preview__item">
+            <text class="weui-preview__label">标题标题</text>
+            <text class="weui-preview__value">标题标题标题标题标题标题标题标题</text>
+        </view>
+    </view>
+    <view class="weui-preview__ft">
+    <view class="weui-preview__btn" hover-class="btn--active">辅助操作</view>
+        <view class="weui-preview__btn weui-preview__btn--primary" hover-class="btn--active">操作</view>
+    </view>
+</view>
+
+<view class="sep"></view>
+
+<view class="weui-navbar">
+    <view class="weui-navbar__item">选项一</view>
+    <view class="weui-navbar__item">选项二</view>
+    <view class="weui-navbar__item weui-navbar__item--active">选项三</view>
+</view>
+
+<view class="sep"></view>
+
+<view class="weui-tabbar">
+    <view class="weui-tabbar__item weui-tabbar__item--active">
+        <view class="weui-tabbar__icon">
+            <image src="assets/icon.png"></image>
+        </view>
+        <view class="weui-tabbar__label">微信</view>
+    </view>
+    <view class="weui-tabbar__item">
+        <view class="weui-tabbar__icon">
+            <image src="assets/icon.png"></image>
+            <image src="assets/icon.png"></image>
+        </view>
+        <view class="weui-tabbar__label">微信</view>
+    </view>
+    <view class="weui-tabbar__item">
+        <view class="weui-tabbar__icon">
+            <image src="assets/icon.png"></image>
+        </view>
+        <view class="weui-tabbar__label">微信</view>
+    </view>
+    <view class="weui-tabbar__item">
+        <view class="weui-tabbar__icon">
+            <image src="assets/icon.png"></image>
+        </view>
+        <view class="weui-tabbar__label">微信</view>
+    </view>
+</view>
