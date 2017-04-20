@@ -12,7 +12,7 @@
                 <text>大会议室</text>
             </view>
             <view class="select-list">
-                <text class="{{item.status?'active':''}}" bindtap="selectTime" data-index = "{{index}}" wx:for="{{timeList}}">{{item.time}}</text>
+                <text class="{{item.status?'active':''}}" bindtap="selectTime" wx:key="{{index}}" data-index = "{{index}}" wx:for="{{timeList}}">{{item.time}}</text>
             </view>
         </view>
     </view>
