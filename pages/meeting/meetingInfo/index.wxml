@@ -1,4 +1,23 @@
 <!--pages/meeting/meetingInfo/index.wxml-->
+
+<view>
+    <picker mode="date" value="{{date}}" start="2017-04-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+            {{date}}
+        </view>
+    </picker>
+    <view class="select-box">
+        <view class="time-select">
+            <view class="meeting-name">
+                <text>大会议室</text>
+            </view>
+            <view class="select-list">
+                <text class="{{item.status?'active':''}}" bindtap="selectTime" data-index = "{{index}}" wx:for="{{timeList}}">{{item.time}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
 <view class="meeting-box">
     <view class="meeting-image">
         <image wx:mode="scaleToFill" class="meeting-img" src="../../image/01.jpg"></image>
@@ -10,3 +29,5 @@
         <text>预约时间: 2017-04-10 上午10点-12点</text>
     </view>
 </view>
+
+

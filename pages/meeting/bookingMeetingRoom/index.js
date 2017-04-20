@@ -1,5 +1,5 @@
 let we = require('../../../we/index.js')
-let urls = require('../../../we/map.js')
+let urls = require('../../map.js')
 
 
 new class extends we.Page {
@@ -16,57 +16,48 @@ new class extends we.Page {
               name: '九层会议室',
               status: true,
               list: [{
-                name: '大会议室',
-                size: '8-10',
-                status: true
+                name: '9大会议室',
+                size: '8-10'
               },
               {
-                name: '小会议室',
-                size: '8-10',
-                status: true
+                name: '9小会议室',
+                size: '8-10'
               },
               {
-                name: '开放会议室',
-                size: '8-10',
-                status: false
+                name: '9开放会议室',
+                size: '8-10'
               }]
             },
             {
               name: '十层会议室',
               status: false,
               list: [{
-                name: '大会议室',
-                size: '8-10',
-                status: true
+                name: '10大会议室',
+                size: '8-10'
               },
               {
-                name: '小会议室',
-                size: '8-10',
-                status: false
+                name: '10小会议室',
+                size: '8-10'
               },
               {
-                name: '开放会议室',
-                size: '8-10',
-                status: true
+                name: '10开放会议室',
+                size: '8-10'
               }]
             },
             {
               name: '十一层会议室',
               status: false,
               list: [{
-                name: '大会议室',
-                size: '8-10',
-                status: false
+                name: '11大会议室',
+                size: '8-10'
               },
               {
-                name: '小会议室',
-                size: '8-10',
-                status: true
+                name: '11小会议室',
+                size: '8-10'
               },
               {
-                name: '开放会议室',
-                size: '8-10',
-                status: true
+                name: '11开放会议室',
+                size: '8-10'
               }]
             }
           ]
@@ -114,6 +105,14 @@ new class extends we.Page {
     onReady() {
       this.setData({
         meetingList : this.data.officeList[0].list
+      })
+
+      wx.request({
+        method:'get',
+        url: 'http://192.168.18.77:8080/v1/meeting',
+        success: function(res) {
+          console.log(res.data)
+        }
       })
     }
 }
