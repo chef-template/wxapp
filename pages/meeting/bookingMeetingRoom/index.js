@@ -1,5 +1,5 @@
 let we = require('../../../we/index.js')
-let urls = require('../../map.js')
+let urls = require('../../util/map.js')
 
 
 new class extends we.Page {
@@ -116,4 +116,3 @@ new class extends we.Page {
       })
     }
 }
-

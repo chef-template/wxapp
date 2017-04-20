@@ -1,12 +1,12 @@
 let pages = {
     "index": "/pages/index/index",
-    "index": "/pages/login/index",
+    "login": "/pages/login/index",
     "books": "/pages/library/books/index",
     "addBooks": "/pages/library/addBooks/index",
     "bookInfo": "/pages/library/bookInfo/index",
     "borrowBooks": "/pages/library/borrowBooks/index",
     "addMeeting": "/pages/meeting/addMeeting/index",
-    "bookingMeetingRoom": "/pages/meeting/bookingMeetingRoom/index", 
+    "bookingMeetingRoom": "/pages/meeting/bookingMeetingRoom/index",
     "meetingInfo": "/pages/meeting/meetingInfo/index"
 }
 

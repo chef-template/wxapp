@@ -1,6 +1,6 @@
 let we = require('../../../we/index.js')
-let urls = require('../../map.js')
-let utils = require('../../../we/utils.js')
+let urls = require('../../util/map.js')
+let utils = require('../../util/index.js')
 
 
 new class extends we.Page {
@@ -39,9 +39,9 @@ new class extends we.Page {
             timeList : timeDataList
         })
     }
-   
+
     onReady() {
-        
+
         let newTimeList = utils.timeFormatList(this.data.startTime,this.data.endTime,30).map((item)=>{
             return {
                 time: item,
