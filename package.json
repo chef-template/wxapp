@@ -2,6 +2,8 @@
     "name": "wxapp-template",
     "version": "0.0.5",
     "scripts": {
-        "install": "git init && git rm --cached --ignore-unmatch --force we && rm -rf .git/modules/we && rm -rf we && git submodule add https://github.com/2046/we.git && rm -rf ./node_modules"
+        "install": "git init && git rm --cached --ignore-unmatch --force we && rm -rf .git/modules/we && rm -rf we && git submodule add https://github.com/2046/we.git && rm -rf ./node_modules",
+    "tag": "node .tag",
+    "tag:delete": "git tag -d $1 && git push origin --delete tag $1"
     }
 }
