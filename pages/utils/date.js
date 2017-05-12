@@ -37,7 +37,7 @@ export const timeSep = (start, end, sep, rest = {hour: 12, msg: '休息一下'})
             endTime = getHmTime(now, start, (len + 1) * sep)
             r[len] = {
                 time: `${startTime.hour}:${startTime.minute}-${endTime.hour}:${endTime.minute}`, 
-                state: now.s > endTime.s : 'outdated' : '' 
+                state: now.s > endTime.s ? 'outdated' : '' 
             }
         }
     }
@@ -45,6 +45,6 @@ export const timeSep = (start, end, sep, rest = {hour: 12, msg: '休息一下'})
 }
 
 function getHmTime(date, h, m) {
-    return dateFormat(new Date(date.year, now.month, now.date, h, m), true)
+    return dateFormat(new Date(date.year, date.month, date.date, h, m), true)
 }
 

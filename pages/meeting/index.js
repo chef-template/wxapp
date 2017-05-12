@@ -43,7 +43,10 @@ let Page = class extends we.Page {
 
 	onTapTab(e) {
 		let index = e.target.dataset.index
-
+		this.setData({
+			'tabs.active': index
+		})
+		// 切换会议室显示
 	}
 
 	selectMeeting(index) {
@@ -55,6 +58,7 @@ let Page = class extends we.Page {
 	// 选择某一天的逻辑入口
 	selectDay(formatter) {
 		let { year, month, date } = formatter
+		date = date * 1
 		date = Math.min(date, local.date + this.data.limit)
 		date = Math.max(date, local.date)
 		// 设置当前显示
@@ -94,12 +98,14 @@ let Page = class extends we.Page {
 
 	onPrevDay() {
 		let { year, month, date } = this.data.now
-		this.selectDay(dateFormat(new Date(year, month - 1, date - 1)), true))
+		date *= 1
+		this.selectDay(dateFormat(new Date(year, month - 1, date - 1)))
 	}
 
 	onNextDay() {
 		let { year, month, date } = this.data.now
-		this.selectDay(dateFormat(new Date(year, month - 1, date + 1), true))
+		date *= 1
+		this.selectDay(dateFormat(new Date(year, month - 1, date + 1)))
 	}
 
 	onReady() {
@@ -107,24 +113,29 @@ let Page = class extends we.Page {
 	}
 	// 后端的数据转成view层数据
 	_toInput(output) {
-		let cache, item, month, year, date, hour, minute, start, end, result
-
+		var cache, item, start, end, result, startTime, endTime, cacheName, now
+		
+		now = this.data.now
 		cache = {}
 		result = clone(backup)
 
 		for (item of output) {
-			{ year, month, date, hour, minute } = formatter(new Date(item.start), true)
-			start = `${hour}:${minute}`
-			{ year, month, date, hour, minute } = formatter(new Date(item.start), true)
-			end = `${hour}:${minute}`
-			if (!cache[`${year}:${month}:${date}`]) {
-				cache[`${year}:${month}:${date}`] = {}
+			startTime = dateFormat(new Date(item.start), true)
+			cacheName = `${startTime.year}:${startTime.month}:${startTime.date}`
+			
+			endTime = dateFormat(new Date(item.end), true)
+			
+			start = `${startTime.hour}:${startTime.minute}`
+			end = `${endTime.hour}:${endTime.minute}`
+			
+			if (!cache[cacheName]) {
+				cache[cacheName] = {}
 			}
-			cache[`${year}:${month}:${date}`][`${start}-${end}`]: item.userId
+			
+			cache[cacheName][`${start}-${end}`] =  item.userId
 		}
 		
-		{ year, month, date, hour, minute, s } = this.data.now
-		cache = cache[`${year}:${month}:${date}`]
+		cache = cache[`${now.year}:${now.month}:${now.date}`]
 		this.setData({
 			bookList: result.map(item => {
 				item.state = cache[item.time] == this.userId ? 'checked' : item.state		 
@@ -141,9 +152,9 @@ let Page = class extends we.Page {
 		return input.filter(item => item.state == 'checked').map(item => {
 			[start, end] = item.time.split('-')
 			[hour, minute] = start.split(':')
-			item.start = +new Date(year, month - 1, date, hour, minute)
+			item.start = dateFormat(new Date(year, month - 1, date, hour, minute)).s
 			[hour, minute] = end.split(':')
-			item.end = +new Date(year, month - 1, date, hour, minute)
+			item.end = dateFormat(new Date(year, month - 1, date, hour, minute)).s
 			delete item.time
 			item.userId = this.data.cache.userId
 			return item
