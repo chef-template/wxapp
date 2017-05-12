@@ -1,0 +1,23 @@
+.weui-tab{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 66rpx;
+    justify-content: center;
+    border-radius: 200rpx;
+    overflow: hidden;
+    width:400rpx;
+}
+.weui-tab-item{
+    background-color: #fff;
+    font-size: 30rpx;
+    color: #4990E2;
+    width: 200rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+}
+.weui-tab-item.active{
+    background-color: #4990E2;
+    color: #fff;
+}

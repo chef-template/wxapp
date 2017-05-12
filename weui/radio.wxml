@@ -1,0 +1,14 @@
+<template name="radio">
+    <label>
+        <view class="weui-radio">
+            <radio value="{{ value }}" />
+            <view class="weui-radio__hd" wx:if="{{ icon }}">
+                <image src="{{ icon }}"></image>
+            </view>
+            <view class="weui-radio__bd">{{ title }}</view>
+            <view class="weui-radio__ft" wx:if="{{ selected }}">
+                <icon type="success_no_circle" size="16" />
+            </view>
+        </view>
+    </label>
+</template>

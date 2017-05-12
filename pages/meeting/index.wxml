@@ -1,0 +1,20 @@
+<import src="../../weui/tab/index.wxml" />
+<view class="room">
+    <template is="tab" data="{{...tabs}}"></template>
+</view>
+
+<view class="date-bar">
+    <view bindtap="onPrevDay" class="date-bar-left {{isPrev ? '' : 'disabled'}}"></view>
+    <view class="date-now">{{ now.year }} / {{ now.month }} / {{now.date}}</view>
+    <view bindtap="onNextDay" class="date-bar-right {{isNext ? '' : 'disabled'}}"></view>
+</view>
+
+<view class="book-list">
+    <view class="book-list-item"  wx:key="*this" wx:for="{{ bookList }}" wx:for-item="time">
+        {{ time }}
+    </view>
+</view>
+<view class="btn">
+    <button type="primary" size="default" hover-class="other-button-hover">确认预定</button>
+</view>
+

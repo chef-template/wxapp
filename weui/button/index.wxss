@@ -1,0 +1,9 @@
+/* reset wxapp default css */
+button[type="primary"] {
+    color:#FFFFFF;
+    background-color:#4990E2;
+    border-radius: 100rpx;
+    font-size: 32rpx;
+    width: 620rpx;
+    height: 95rpx;
+}
