@@ -1,0 +1,95 @@
+.weui-tab{
+    margin-top: 22rpx;
+    margin-left:auto;
+    margin-right: auto;
+}
+.room{
+    width: 100%;
+    border-top: 1rpx solid #DCDCDC;
+    border-bottom: 1rpx solid #DCDCDC;
+    padding-bottom: 18rpx; 
+}
+.book-list,
+.date-bar{
+    width: 682rpx;
+    margin: 0 auto;
+}
+.date-bar{
+    margin-top: 33.6rpx;
+}
+.book-list{
+    margin-top: 34rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    
+    border-top: 1rpx solid #979797;
+    border-left: 1rpx solid #979797;
+}
+.book-list-item{
+    border-bottom: 1rpx solid #979797;
+    border-right: 1rpx solid #979797;
+    width: 224rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #333;
+}
+.book-list-item:hover{
+    color:#fff;
+    background-color: #4990E2;
+}
+.book-list-item.outdated{
+    background-color: #B1BAC3;
+}
+
+.book-list-item.checked,
+.book-list-item.checked:hover{
+    background-color: rgba(74, 144, 226, 30);
+    color: #4990E2;
+}
+.date-bar{
+    display: flex;
+}
+.date-now{
+    flex: 1;
+}
+.date-now{
+    font-size: 32rpx;
+    color: #333333;
+    text-align: center;
+}
+.date-bar-left, 
+.date-bar-right{
+    box-sizing: border-box;
+    width:0;
+    height:0;
+    border-style: solid;
+    border-width: 20rpx 28rpx;
+}
+.date-bar-left.disabled{  
+    border-color: transparent #D8D8D8 transparent transparent;
+}
+.date-bar-left{
+    border-color: transparent #4A4A4A transparent transparent;
+}
+.date-bar-right.disabled{
+    border-color: transparent transparent transparent #D8D8D8;
+}
+.date-bar-right{
+    border-color: transparent transparent transparent #4A4A4A;
+}
+.date-bar-left{
+    margin-left: -28rpx;
+}
+.date-bar-right{
+    margin-right: -28rpx;
+}
+.btn{
+
+    margin-top:42rpx;
+    display:flex;
+    justify-content:center;
+}

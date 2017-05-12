@@ -1,11 +1,12 @@
 {
     "pages": [
+        "pages/meeting/index",
         "pages/demo/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "微信小程序",
+        "navigationBarTitleText": "厚本oa",
         "navigationBarBackgroundColor": "#fff"
     }
 }

@@ -1,0 +1,5 @@
+<template name="dialog">
+    <view class="weui-dialog">
+        
+    </view>
+</template>

@@ -519,3 +519,9 @@ button {
     display: inline-block;
 }
 /* tabbar end */
+
+/* tabs */
+@import "weui/tab/index.wxss"
+
+/* button */
+@import "weui/button/index.wxss"
