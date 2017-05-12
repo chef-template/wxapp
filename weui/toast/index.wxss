@@ -1,0 +1,37 @@
+.weui-toast-mask, 
+.weui-toast{
+    position: fixed;
+    z-index:9999;
+}
+.weui-toast{
+    display: flex;
+    justify-content: center;
+}
+.weui-toast-title{
+    font-size: 36rpx;
+    color: #4990E2;
+    margin-top: 46rpx;
+}
+.weui-toast-content{
+    margin-top: 32rpx;
+    margin-bottom: 64rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    color: #333;
+}
+.weui-toast-mask{
+    z-index: 9999;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0, .35);
+}
+.weui-toast{
+    border-radius: 6rpx;
+    background-color: #fff;
+    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 528rpx;
+    min-height: 240rpx;
+}

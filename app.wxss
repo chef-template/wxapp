@@ -525,3 +525,6 @@ button {
 
 /* button */
 @import "weui/button/index.wxss"
+
+/* toast */
+@import "weui/toast/index.wxss"

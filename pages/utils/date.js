@@ -18,26 +18,33 @@ export const dateFormat = (date, isAddZero) => {
 }
 
 export const timeSep = (start, end, sep, rest = {hour: 12, msg: '休息一下'}) => {
-    let n, r, len, hm
+    let n, r, len, startTime, endTime, now
     if (60 % sep !== 0) {
         throw new Error('sep必须可以被60整除')
     }
     n = 60 / sep
     r = []
     len = (end - start) * n
+    now = dateFormat(null, true)
     while (len--) {
-        hm = getHmTime(start, len % 2 ? len * sep + 1 : len * sep)
-        if(rest.hour == 1 * hm.substr(0,2)){
-            r[len] = rest.msg
+        startTime = getHmTime(now, start, len % 2 ? len * sep + 1 : len * sep)
+        
+        if(rest.hour == 1 * startTime.hour){
+            r[len] = {time: rest.msg, state: ''}
             len--
             r.splice(len, 1) // 12-13点休息时间
         } else {
-            r[len] = `${hm}-${getHmTime(start, (len + 1) * sep)}`
+            endTime = getHmTime(now, start, (len + 1) * sep)
+            r[len] = {
+                time: `${startTime.hour}:${startTime.minute}-${endTime.hour}:${endTime.minute}`, 
+                state: now.s > endTime.s : 'outdated' : '' 
+            }
         }
     }
     return r
 }
 
-function getHmTime(h, m) {
-    return new Date(2017, 1, 1, h, m).toString().substr(16, 5)
+function getHmTime(date, h, m) {
+    return dateFormat(new Date(date.year, now.month, now.date, h, m), true)
 }
+

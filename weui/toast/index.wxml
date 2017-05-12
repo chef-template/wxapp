@@ -1,0 +1,11 @@
+<template name="toast">
+    <view class="weui-toast" wx:if="{{ isShow }}">
+        <view wx:if="{{title}}" class="weui-toast-title">
+            {{ title }}
+        </view>
+        <view class="weui-toast-content">
+            <view wx:for="{{content}}" wx:key="*this" wx:for-item="c">{{c}}</view>
+        </view>
+    </view>
+    <view class="weui-toast-mask" wx:if="{{ isShow }}"></view>
+</template>

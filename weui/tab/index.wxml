@@ -1,7 +1,7 @@
 <template name="tab">
     <view class="weui-tab">
-        <view data-index="{{index}}" bindtap="onTapTab" wx:key="*this" wx:for="{{ tab }}" wx:for-item="item" class="weui-tab-item {{ index == active ? 'active' : '' }}">    
-            {{item}}
+        <view data-index="{{index}}" bindtap="onTapTab" wx:key="{{key}}" wx:for="{{ tab }}" wx:for-item="item" class="weui-tab-item {{ index == active ? 'active' : '' }}">    
+            {{item.name}}
         </view>
     </view>
 </template>

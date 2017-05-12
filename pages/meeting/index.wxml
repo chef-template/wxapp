@@ -1,4 +1,6 @@
 <import src="../../weui/tab/index.wxml" />
+<import src="../../weui/toast/index.wxml" />
+<template is="toast" data="{{...toast}}"></template>
 <view class="room">
     <template is="tab" data="{{...tabs}}"></template>
 </view>
@@ -10,8 +12,8 @@
 </view>
 
 <view class="book-list">
-    <view class="book-list-item"  wx:key="*this" wx:for="{{ bookList }}" wx:for-item="time">
-        {{ time }}
+    <view bindtap="onTapTime" data-index="{{index}}" class="book-list-item {{ item.state }}"  wx:key="{{index}}" wx:for="{{ bookList }}" wx:for-item="item">
+        {{ item.time }}
     </view>
 </view>
 <view class="btn">
